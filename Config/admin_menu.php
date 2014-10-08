@@ -12,7 +12,7 @@ CroogoNav::add('sidebar', 'slideshow', array(
 	'weight' => 10,
 	'children' => array(
 		'list' => array(
-			'title' => __d('croogo', 'List'),
+			'title' => 'Slideshow',
 			'url' => array(
 				'admin' => true,
 				'plugin' => 'slideshow',
@@ -22,7 +22,7 @@ CroogoNav::add('sidebar', 'slideshow', array(
 			'weight' => 10,
 		),
 		'create' => array(
-			'title' => __d('croogo', 'Create'),
+			'title' => 'slideshow items',
 			'url' => array(
 				'admin' => true,
 				'plugin' => 'slideshow',
