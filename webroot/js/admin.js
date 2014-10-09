@@ -59,3 +59,13 @@ $(document).ready(function() {
 	}
 
 });
+
+Croogo.Wysiwyg.choose = function(url, title, description) {
+	//var params = window.location.href.split('?')[1].split('&');
+	
+console.log(url);
+//	if (typeof paramsObj['CKEditorFuncNum'] != 'undefined') {
+//		window.top.opener.CKEDITOR.tools.callFunction(paramsObj['CKEditorFuncNum'], Croogo.Wysiwyg.uploadsPath + url);
+//		window.top.close();
+//	}
+};

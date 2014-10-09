@@ -1,4 +1,5 @@
 <?php
+
 $this->viewVars['title_for_layout'] = __d('slideshow', 'Slideshow Items');
 $this->extend('/Common/admin_edit');
 $this->Croogo->adminscript('Slideshow.admin');
@@ -37,7 +38,22 @@ $this->append('tab-content');
 	));
 	echo $this->Form->input('content', array(
 		'label' => 'Content',
-		'div' => array('class'=>'input text slideshow-content')
+		'div' => array('class'=>'input text slideshow-content'),
+                'after' => ' ' . $this->Html->link('Choose Node',
+                                array(
+                                        'plugin' => 'file_manager',
+                                        'controller' => 'attachments',
+                                        'action' => 'browse',
+                                        '?' => array(
+                                               
+                                                'KeepThis' => 'true',
+                                                'TB_iframe' => 'true',
+                                        ),
+                                ),
+                                array(
+                                        'class' => 'action node chooser',
+                                )
+                        )
 	));
 
 
@@ -55,3 +71,13 @@ $this->append('panels');
 $this->end();
 
 $this->append('form-end', $this->Form->end());
+
+$script = <<<EOF
+$('.chooser').itemChooser({
+	fields: [
+		{ type: "SlideshowItem", target: 'SlideshowItemContent', attr: 'data_chooser_content' }
+	]
+});
+EOF;
+$this->Js->buffer($script);
+?>
